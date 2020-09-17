@@ -1,7 +1,17 @@
+.menu-icon {
+  display: none;
+}
+
 .logo {
   width: 120px;
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .menu-icon {
+    display: inline;
+  }
 }

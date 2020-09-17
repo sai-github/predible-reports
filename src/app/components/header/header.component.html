@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <button
     mat-icon-button
-    class="example-icon"
+    class="menu-icon"
     aria-label="Example icon-button with menu icon"
   >
     <mat-icon>menu</mat-icon>
@@ -14,8 +14,20 @@
   <button
     mat-icon-button
     class="example-icon"
-    aria-label="More information about app"
+    aria-label="Open app settings"
+    [matMenuTriggerFor]="settings"
   >
-    <mat-icon>info</mat-icon>
+    <mat-icon>settings</mat-icon>
   </button>
+
+  <mat-menu #settings="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>My Profile</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>
