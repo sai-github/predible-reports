@@ -14,19 +14,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 
 /**
- * predible/components
- */
-import { HeaderComponent } from './components/header/header.component';
-import { LungReportComponent } from './components/lung-report/lung-report.component';
-
-/**
  * Quill Editor
  */
 
 import { QuillModule } from 'ngx-quill';
 
+/**
+ * predible/components
+ */
+import { HeaderComponent } from './components/header/header.component';
+import { LungReportComponent } from './components/lung-report/lung-report.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, LungReportComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    LungReportComponent,
+    FooterComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
