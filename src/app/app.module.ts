@@ -25,6 +25,7 @@ import { QuillModule } from 'ngx-quill';
 import { HeaderComponent } from './components/header/header.component';
 import { LungReportComponent } from './components/lung-report/lung-report.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ReportDetailsComponent } from './components/report-details/report-details.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     LungReportComponent,
     FooterComponent,
+    ReportDetailsComponent,
   ],
   imports: [
     BrowserModule,
