@@ -26,6 +26,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { LungReportComponent } from './components/lung-report/lung-report.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReportDetailsComponent } from './components/report-details/report-details.component';
+import { ReportAnalysisComponent } from './components/report-analysis/report-analysis.component';
+import { NoduleAnalysisComponent } from './components/nodule-analysis/nodule-analysis.component';
+import { NoduleSnippetComponent } from './components/nodule-snippet/nodule-snippet.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { ReportDetailsComponent } from './components/report-details/report-detai
     LungReportComponent,
     FooterComponent,
     ReportDetailsComponent,
+    ReportAnalysisComponent,
+    NoduleAnalysisComponent,
+    NoduleSnippetComponent,
   ],
   imports: [
     BrowserModule,
