@@ -38,9 +38,15 @@ export class EditorService {
     nodules.forEach((nodule) => {
       content += `
         <div>
-          A <em>${nodule.type}</em> nodule was seen in the <em>${nodule.lobe}</em> lobe. It has
-          a diameter of <strong>${nodule.size} mm</strong> and a volume of
-          <strong>${nodule.vol} ml</strong>. It is <em>${nodule.cal}</em>.&nbsp;
+          A <em>${nodule.type}</em> nodule was seen in the <em>${
+        nodule.lobe
+      }</em> lobe. It has
+          a diameter of <strong>${
+            nodule.size
+          } mm</strong> and a volume of
+          <strong>${nodule.vol} ml</strong>. It is <em>${
+        Number(nodule.cal) < 5 ? 'non-calcified' : 'calcified'
+      }</em>.&nbsp;
         </div>
       `;
     });
