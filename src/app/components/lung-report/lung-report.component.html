@@ -21,6 +21,8 @@
         class="action-buttons"
         matTooltip="Approve Report"
         [matTooltipPosition]="'above'"
+        (click)="onApproveReport()"
+        [disabled]="appBusy"
       >
         <mat-icon>done</mat-icon>
       </button>
@@ -31,9 +33,15 @@
         class="action-buttons"
         matTooltip="Download Report"
         [matTooltipPosition]="'above'"
+        (click)="onDownloadReport()"
       >
         <mat-icon>save_alt</mat-icon>
       </button>
     </div>
+    <mat-progress-bar
+      *ngIf="appBusy"
+      mode="indeterminate"
+      color="accent"
+    ></mat-progress-bar>
   </div>
 </ng-container>
