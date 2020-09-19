@@ -7,42 +7,37 @@
     <div class="details-container">
       <mat-form-field class="details-input">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <input matInput value="{{ details.name }}" disabled />
       </mat-form-field>
 
       <mat-form-field class="details-input">
         <mat-label>Accession Number</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <input matInput value="{{ details.accNo }}" disabled />
       </mat-form-field>
 
       <mat-form-field class="details-input">
         <mat-label>Sex</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <input matInput value="{{ details.sex }}" disabled />
       </mat-form-field>
 
       <mat-form-field class="details-input">
         <mat-label>Patient ID</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <input matInput value="{{ details.patientID }}" disabled />
       </mat-form-field>
 
       <mat-form-field class="details-input">
         <mat-label>Study Date</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <input matInput value="{{ details.studyDate }}" disabled />
       </mat-form-field>
 
       <mat-form-field class="details-input">
         <mat-label>Age</mat-label>
-        <input matInput placeholder="Ex. Pizza" value="Sushi" />
+        <input matInput value="{{ details.age }}" disabled />
       </mat-form-field>
 
       <mat-form-field class="details-input">
         <mat-label>Ref. Physician</mat-label>
-        <input
-          matInput
-          placeholder="Ex. Pizza"
-          value="Sushi"
-          disabled
-        />
+        <input matInput value="{{ details.refPhy }}" disabled />
       </mat-form-field>
     </div>
   </mat-expansion-panel>

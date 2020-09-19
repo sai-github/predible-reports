@@ -1,9 +1,13 @@
-<div class="wrapper">
-  <div class="details-wrapper">
-    <app-report-details></app-report-details>
-  </div>
+<ng-container *ngIf="report">
+  <div class="wrapper">
+    <div class="details-wrapper">
+      <app-report-details
+        [details]="report.details"
+      ></app-report-details>
+    </div>
 
-  <div class="analysis-wrapper">
-    <app-report-analysis></app-report-analysis>
+    <div class="analysis-wrapper">
+      <app-report-analysis></app-report-analysis>
+    </div>
   </div>
-</div>
+</ng-container>
