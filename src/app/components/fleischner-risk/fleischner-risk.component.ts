@@ -2,6 +2,7 @@ import {
   Component,
   OnInit,
   ChangeDetectionStrategy,
+  Input,
 } from '@angular/core';
 
 @Component({
@@ -11,6 +12,8 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FleischnerRiskComponent implements OnInit {
+  @Input()
+  risk: boolean;
   constructor() {}
 
   ngOnInit(): void {}

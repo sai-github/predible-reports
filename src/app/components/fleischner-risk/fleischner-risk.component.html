@@ -3,11 +3,14 @@
     <mat-card-title> Fleischner Risk</mat-card-title>
   </mat-card-header>
   <mat-card-content class="my-content">
-    <mat-radio-group aria-label="Fleischner Risk">
-      <mat-radio-button class="my-option" color="primary" value="1"
+    <mat-radio-group aria-label="Fleischner Risk" [value]="risk">
+      <mat-radio-button
+        class="my-option"
+        color="primary"
+        value="false"
         >Low Risk</mat-radio-button
       >
-      <mat-radio-button class="my-option" value="2"
+      <mat-radio-button class="my-option" value="true"
         >High Risk</mat-radio-button
       >
     </mat-radio-group>

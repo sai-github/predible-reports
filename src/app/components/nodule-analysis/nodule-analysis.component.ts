@@ -16,6 +16,8 @@ export class NoduleAnalysisComponent implements OnInit {
     typeList: string[];
     borderList: string[];
   };
+  @Input()
+  risk: boolean;
 
   /**
    * Quill variables
