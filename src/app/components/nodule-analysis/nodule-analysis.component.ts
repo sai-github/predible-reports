@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Nodule } from 'src/app/models/nodule.model';
 import { EditorService } from 'src/app/services/editor.service';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-nodule-analysis',
   templateUrl: './nodule-analysis.component.html',
@@ -24,8 +24,13 @@ export class NoduleAnalysisComponent implements OnInit {
    */
   modules = {};
   content = '';
+  editor: any;
+  editorPlainText: string;
 
-  constructor(private editorService: EditorService) {}
+  constructor(
+    private editorService: EditorService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.modules = {
@@ -68,5 +73,16 @@ export class NoduleAnalysisComponent implements OnInit {
     this.content = this.editorService.getEditorText(
       this.nodules.filter((item) => Boolean(item.select) === true)
     );
+  }
+
+  onEditorCreation(editor: any) {
+    this.editor = editor;
+    this.editorPlainText = this.editor.getText();
+  }
+
+  onCopyContent() {
+    this._snackBar.open('Plain text copied', 'OK', {
+      duration: 2000,
+    });
   }
 }

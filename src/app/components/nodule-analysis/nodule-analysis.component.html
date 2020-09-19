@@ -16,8 +16,19 @@
     <quill-editor
       class="editor-styles"
       [(ngModel)]="content"
-      trackChanges="all"
+      trackChanges="user"
       [modules]="modules"
+      (onEditorCreated)="onEditorCreation($event)"
     ></quill-editor>
+
+    <div *ngIf="editor" class="clipboard-conatiner">
+      <button
+        mat-stroked-button
+        [cdkCopyToClipboard]="editorPlainText"
+        (click)="onCopyContent()"
+      >
+        Copy to Clipboard
+      </button>
+    </div>
   </div>
 </div>

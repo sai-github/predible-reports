@@ -12,5 +12,28 @@
         [optionsList]="optionsList"
       ></app-report-analysis>
     </div>
+
+    <div class="actions-wrapper">
+      <button
+        mat-fab
+        color="primary"
+        aria-label="Approve Report"
+        class="action-buttons"
+        matTooltip="Approve Report"
+        [matTooltipPosition]="'above'"
+      >
+        <mat-icon>done</mat-icon>
+      </button>
+      <button
+        mat-fab
+        color="accent"
+        aria-label="Download Report"
+        class="action-buttons"
+        matTooltip="Download Report"
+        [matTooltipPosition]="'above'"
+      >
+        <mat-icon>save_alt</mat-icon>
+      </button>
+    </div>
   </div>
 </ng-container>
