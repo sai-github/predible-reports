@@ -1,6 +1,7 @@
 <mat-tab-group mat-stretch-tabs class="my-tab-group">
   <mat-tab label="Nodule Analysis">
     <app-nodule-analysis
+      *ngIf="analysis && optionsList"
       [nodules]="analysis.nodule"
       [optionList]="optionsList"
     ></app-nodule-analysis>

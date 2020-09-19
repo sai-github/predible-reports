@@ -30,6 +30,7 @@ import { ReportDetailsComponent } from './components/report-details/report-detai
 import { ReportAnalysisComponent } from './components/report-analysis/report-analysis.component';
 import { NoduleAnalysisComponent } from './components/nodule-analysis/nodule-analysis.component';
 import { NoduleSnippetComponent } from './components/nodule-snippet/nodule-snippet.component';
+import { FleischnerRiskComponent } from './components/fleischner-risk/fleischner-risk.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { NoduleSnippetComponent } from './components/nodule-snippet/nodule-snipp
     ReportAnalysisComponent,
     NoduleAnalysisComponent,
     NoduleSnippetComponent,
+    FleischnerRiskComponent,
   ],
   imports: [
     BrowserModule,
