@@ -6,4 +6,5 @@ export interface Nodule {
   cal: string;
   size: string;
   vol: string;
+  imgURL: string;
 }
