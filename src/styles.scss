@@ -13,3 +13,26 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+/**
+* Scroll bar
+*/
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ef476f #00000000;
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  background: #00000000;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #ef476f;
+  border-radius: 5px;
+  border: 3px solid #00000000;
+}
