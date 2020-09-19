@@ -13,6 +13,11 @@
   <div class="right-wrapper">
     <app-fleischner-risk></app-fleischner-risk>
 
-    <quill-editor class="editor-styles"></quill-editor>
+    <quill-editor
+      class="editor-styles"
+      [(ngModel)]="content"
+      trackChanges="all"
+      [modules]="modules"
+    ></quill-editor>
   </div>
 </div>

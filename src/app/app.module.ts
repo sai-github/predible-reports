@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 /**
  * material/theme
@@ -49,6 +50,7 @@ import { FleischnerRiskComponent } from './components/fleischner-risk/fleischner
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     MaterialModule,
     QuillModule.forRoot(),
   ],
