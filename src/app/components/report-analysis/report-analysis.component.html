@@ -1,6 +1,9 @@
 <mat-tab-group mat-stretch-tabs class="my-tab-group">
   <mat-tab label="Nodule Analysis">
-    <app-nodule-analysis></app-nodule-analysis>
+    <app-nodule-analysis
+      [nodules]="analysis.nodule"
+      [optionList]="optionsList"
+    ></app-nodule-analysis>
   </mat-tab>
   <mat-tab label="Low Attenuation Analysis"> Content 2 </mat-tab>
   <mat-tab label="High Attenuation Analysis"> Content 3 </mat-tab>

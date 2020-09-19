@@ -1,35 +1,61 @@
 <mat-card class="nodule-card">
   <mat-card-header>
     <mat-card-title>
-      <mat-checkbox class="checkbox-margin">Nodule 1</mat-checkbox>
+      <mat-checkbox class="checkbox-margin">{{
+        nodule.title
+      }}</mat-checkbox>
     </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div class="snippet-container">
       <div class="snippet-details">
         <mat-form-field class="full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <mat-label>Lobe</mat-label>
+          <mat-select [value]="nodule.lobe">
+            <mat-option *ngFor="let lobe of lobeList" [value]="lobe">
+              {{ lobe }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <mat-label>Type</mat-label>
+          <mat-select [value]="nodule.type">
+            <mat-option *ngFor="let type of typeList" [value]="type">
+              {{ type }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <mat-label>Percentage Calcification</mat-label>
+          <input
+            matInput
+            placeholder="Enter Calcification"
+            [value]="nodule.cal"
+          />
+          <span matSuffix>% </span>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <mat-label>Size</mat-label>
+          <input
+            matInput
+            placeholder="Enter size in mm"
+            [value]="nodule.size"
+          />
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi" />
+          <mat-label>Border</mat-label>
+          <mat-select [value]="nodule.border">
+            <mat-option
+              *ngFor="let border of borderList"
+              [value]="border"
+            >
+              {{ border }}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="snippet-img">

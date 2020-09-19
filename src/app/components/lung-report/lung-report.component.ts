@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Report } from 'src/app/models/report.model';
 import { ReportsService } from 'src/app/services/reports.service';
+import { UtilsService } from 'src/app/services/utils.service';
 @Component({
   selector: 'app-lung-report',
   templateUrl: './lung-report.component.html',
@@ -8,11 +9,23 @@ import { ReportsService } from 'src/app/services/reports.service';
 })
 export class LungReportComponent implements OnInit {
   report: Report;
-  constructor(private reportsService: ReportsService) {}
+  optionsList: {
+    lobeList: string[];
+    typeList: string[];
+    borderList: string[];
+  };
+  constructor(
+    private reportsService: ReportsService,
+    private utilsService: UtilsService
+  ) {}
 
   ngOnInit(): void {
     this.reportsService
       .getReport('1')
       .subscribe((res) => (this.report = res));
+
+    this.utilsService
+      .getCommonListOfNodulesAnalysis()
+      .subscribe((res) => (this.optionsList = res));
   }
 }

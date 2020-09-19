@@ -1,9 +1,14 @@
 <!-- <app-nodule-snippet></app-nodule-snippet> -->
 <div class="wrapper">
   <div class="left-wrapper">
-    <app-nodule-snippet></app-nodule-snippet>
-    <app-nodule-snippet></app-nodule-snippet>
-    <app-nodule-snippet></app-nodule-snippet>
+    <ng-container *ngFor="let nodule of nodules">
+      <app-nodule-snippet
+        [nodule]="nodule"
+        [lobeList]="optionList.lobeList"
+        [typeList]="optionList.typeList"
+        [borderList]="optionList.borderList"
+      ></app-nodule-snippet>
+    </ng-container>
   </div>
   <div class="right-wrapper">
     <quill-editor class="editor-styles"></quill-editor>

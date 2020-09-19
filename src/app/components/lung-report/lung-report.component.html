@@ -7,7 +7,10 @@
     </div>
 
     <div class="analysis-wrapper">
-      <app-report-analysis></app-report-analysis>
+      <app-report-analysis
+        [analysis]="report.analysis"
+        [optionsList]="optionsList"
+      ></app-report-analysis>
     </div>
   </div>
 </ng-container>
