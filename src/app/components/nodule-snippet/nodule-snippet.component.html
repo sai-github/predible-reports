@@ -4,6 +4,7 @@
       <mat-checkbox
         class="checkbox-margin"
         [checked]="nodule.select"
+        (change)="updateNodule('select', $event.checked)"
         >{{ nodule.title }}</mat-checkbox
       >
     </mat-card-title>
@@ -13,7 +14,10 @@
       <div class="snippet-details">
         <mat-form-field class="full-width">
           <mat-label>Lobe</mat-label>
-          <mat-select [value]="nodule.lobe">
+          <mat-select
+            [value]="nodule.lobe"
+            (selectionChange)="updateNodule('lobe', $event.value)"
+          >
             <mat-option *ngFor="let lobe of lobeList" [value]="lobe">
               {{ lobe }}
             </mat-option>
@@ -22,7 +26,10 @@
 
         <mat-form-field class="full-width">
           <mat-label>Type</mat-label>
-          <mat-select [value]="nodule.type">
+          <mat-select
+            [value]="nodule.type"
+            (selectionChange)="updateNodule('type', $event.value)"
+          >
             <mat-option *ngFor="let type of typeList" [value]="type">
               {{ type }}
             </mat-option>
@@ -35,6 +42,7 @@
             matInput
             placeholder="Enter Calcification"
             [value]="nodule.cal"
+            (change)="updateNodule('cal', $event.target.value)"
           />
           <span matSuffix>% </span>
         </mat-form-field>
@@ -45,12 +53,16 @@
             matInput
             placeholder="Enter size in mm"
             [value]="nodule.size"
+            (change)="updateNodule('size', $event.target.value)"
           />
         </mat-form-field>
 
         <mat-form-field class="full-width">
           <mat-label>Border</mat-label>
-          <mat-select [value]="nodule.border">
+          <mat-select
+            [value]="nodule.border"
+            (selectionChange)="updateNodule('border', $event.value)"
+          >
             <mat-option
               *ngFor="let border of borderList"
               [value]="border"

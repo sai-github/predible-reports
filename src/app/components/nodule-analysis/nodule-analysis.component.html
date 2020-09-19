@@ -1,4 +1,3 @@
-<!-- <app-nodule-snippet></app-nodule-snippet> -->
 <div class="wrapper">
   <div class="left-wrapper">
     <ng-container *ngFor="let nodule of nodules">
@@ -7,6 +6,7 @@
         [lobeList]="optionList.lobeList"
         [typeList]="optionList.typeList"
         [borderList]="optionList.borderList"
+        (onUpdateNodule)="updateNodule($event)"
       ></app-nodule-snippet>
     </ng-container>
   </div>

@@ -52,6 +52,21 @@ export class NoduleAnalysisComponent implements OnInit {
       ],
     };
 
-    this.content = this.editorService.getEditorText(this.nodules);
+    this.content = this.editorService.getEditorText(
+      this.nodules.filter((item) => Boolean(item.select) === true)
+    );
+  }
+
+  updateNodule(nodule: Nodule) {
+    const currNoduleIndex = this.nodules.findIndex(
+      (item) => item.title === nodule.title
+    );
+    if (currNoduleIndex !== -1) {
+      this.nodules[currNoduleIndex] = nodule;
+    }
+
+    this.content = this.editorService.getEditorText(
+      this.nodules.filter((item) => Boolean(item.select) === true)
+    );
   }
 }
