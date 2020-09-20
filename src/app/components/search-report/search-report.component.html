@@ -1,0 +1,44 @@
+<img class="img" src="assets/images/file_searching.svg" />
+
+<mat-card class="card">
+  <div class="container">
+    <mat-form-field class="full-width">
+      <mat-label>Report ID</mat-label>
+      <input
+        matInput
+        #reportInput
+        placeholder="Existing IDs 1 and 2"
+        value="1"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Sex</mat-label>
+      <input matInput placeholder="Ex: M, F" value="M" disabled />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Study Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [value]="today"
+        disabled
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button
+      mat-mini-fab
+      color="primary"
+      aria-label="Perform Search"
+      (click)="onSearch(reportInput.value)"
+    >
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</mat-card>

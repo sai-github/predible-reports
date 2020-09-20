@@ -10,6 +10,40 @@
   flex: 1 1 auto;
 }
 
+.my-search-container {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.my-search-input {
+  font-size: 16px;
+
+  border: 0;
+  border-radius: 3px;
+  height: 30px;
+  max-width: 120px;
+  padding: 0rem 0.5rem;
+
+  background: white no-repeat;
+  background-image: linear-gradient(to bottom, #1abc9c, #1abc9c);
+  background-size: 0 2px, 100% 1px;
+  background-position: 0% 100%;
+  transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+.my-search-input:focus {
+  background-size: 100% 2px, 100% 1px;
+  outline: none;
+}
+
+.my-search-icon {
+  color: #1abc9c;
+  margin-left: -2rem;
+
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
   .menu-icon {
     display: inline;

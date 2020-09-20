@@ -7,9 +7,41 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <img class="logo" src="assets/images/predible_logo.svg" />
+  <img
+    class="logo"
+    src="assets/images/predible_logo.svg"
+    routerLink=""
+  />
 
   <span class="spacer"></span>
+
+  <div class="my-search-container">
+    <input
+      #reportInput
+      class="my-search-input"
+      placeholder="Report ID"
+      (keydown.enter)="navigate(reportInput.value)"
+      [matAutocomplete]="auto"
+    />
+    <mat-icon
+      class="my-search-icon"
+      (click)="navigate(reportInput.value)"
+      >search</mat-icon
+    >
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option
+        *ngFor="
+          let option of [
+            { viewValue: 'Report 1', id: 1 },
+            { viewValue: 'Report 2', id: 2 }
+          ]
+        "
+        [value]="option.id"
+      >
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-autocomplete>
+  </div>
 
   <button
     mat-icon-button

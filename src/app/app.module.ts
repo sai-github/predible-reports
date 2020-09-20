@@ -32,6 +32,8 @@ import { ReportAnalysisComponent } from './components/report-analysis/report-ana
 import { NoduleAnalysisComponent } from './components/nodule-analysis/nodule-analysis.component';
 import { NoduleSnippetComponent } from './components/nodule-snippet/nodule-snippet.component';
 import { FleischnerRiskComponent } from './components/fleischner-risk/fleischner-risk.component';
+import { NoReportComponent } from './components/no-report/no-report.component';
+import { SearchReportComponent } from './components/search-report/search-report.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { FleischnerRiskComponent } from './components/fleischner-risk/fleischner
     NoduleAnalysisComponent,
     NoduleSnippetComponent,
     FleischnerRiskComponent,
+    NoReportComponent,
+    SearchReportComponent,
   ],
   imports: [
     BrowserModule,

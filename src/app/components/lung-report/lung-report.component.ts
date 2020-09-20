@@ -4,6 +4,7 @@ import { ReportsService } from 'src/app/services/reports.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lung-report',
@@ -11,6 +12,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./lung-report.component.scss'],
 })
 export class LungReportComponent implements OnInit, OnDestroy {
+  reportID: string;
   report: Report;
   optionsList: {
     lobeList: string[];
@@ -28,19 +30,28 @@ export class LungReportComponent implements OnInit, OnDestroy {
   constructor(
     private reportsService: ReportsService,
     private utilsService: UtilsService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.reportID = this.route.snapshot.paramMap.get('id');
+
     this.appBusy = false;
 
-    this.temp1 = this.reportsService
-      .getReport('1')
-      .subscribe((res) => (this.report = res));
+    if (this.reportID) {
+      this.temp1 = this.reportsService
+        .getReport(this.reportID)
+        .subscribe((res) => {
+          this.report = res;
+        });
 
-    this.temp2 = this.utilsService
-      .getCommonListOfNodulesAnalysis()
-      .subscribe((res) => (this.optionsList = res));
+      this.temp2 = this.utilsService
+        .getCommonListOfNodulesAnalysis()
+        .subscribe((res) => (this.optionsList = res));
+    }
   }
 
   onApproveReport() {
@@ -60,8 +71,14 @@ export class LungReportComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.temp1.unsubscribe();
-    this.temp2.unsubscribe();
-    this.temp3.unsubscribe();
+    if (this.temp1) {
+      this.temp1.unsubscribe();
+    }
+    if (this.temp2) {
+      this.temp2.unsubscribe();
+    }
+    if (this.temp3) {
+      this.temp3.unsubscribe();
+    }
   }
 }
