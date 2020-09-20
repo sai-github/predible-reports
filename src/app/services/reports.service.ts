@@ -16,7 +16,7 @@ export class ReportsService {
 
   public getReport(id: string): Observable<Report> {
     const endPoint =
-      'http://my-json-server.typicode.com/sai-github/predible-reports-mock-data/report/';
+      'https://my-json-server.typicode.com/sai-github/predible-reports-mock-data/report/';
     return this.http.get<Report>(endPoint + id).pipe(
       map((res) => res),
       catchError((err) => {
