@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { interval, Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -21,7 +21,20 @@ export class UtilsService {
       .pipe(map((res) => res.nodule));
   }
 
-  public dummyApprove(): Observable<string> {
-    return of('Dummy Report, Approved!').pipe(delay(3000));
+  public dummyApprove(): Observable<{
+    status: string;
+    completion: number;
+  }> {
+    const response = [
+      { status: 'loading', completion: 0 },
+      { status: 'loading', completion: 25 },
+      { status: 'loading', completion: 50 },
+      { status: 'loading', completion: 75 },
+      { status: 'Dummy Report, Approved!', completion: 100 },
+    ];
+    return interval(500).pipe(
+      take(response.length),
+      map((index) => response[index])
+    );
   }
 }

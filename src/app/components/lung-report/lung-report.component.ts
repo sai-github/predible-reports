@@ -21,6 +21,7 @@ export class LungReportComponent implements OnInit, OnDestroy {
   };
 
   appBusy: boolean;
+  progressValue: number;
 
   /**Subscriptions */
   temp1: Subscription;
@@ -56,11 +57,15 @@ export class LungReportComponent implements OnInit, OnDestroy {
 
   onApproveReport() {
     this.appBusy = true;
+    this.progressValue = 0;
     this.temp3 = this.utilsService.dummyApprove().subscribe((res) => {
-      this.appBusy = false;
-      this._snackBar.open(res, 'OK', {
-        duration: 2000,
-      });
+      this.progressValue = res.completion;
+      if (res.status !== 'loading') {
+        this.appBusy = false;
+        this._snackBar.open(res.status, 'OK', {
+          duration: 2000,
+        });
+      }
     });
   }
 

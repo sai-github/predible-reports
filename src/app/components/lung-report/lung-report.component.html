@@ -44,8 +44,9 @@
     </div>
     <mat-progress-bar
       *ngIf="appBusy"
-      mode="indeterminate"
+      mode="buffer"
       color="accent"
+      [value]="progressValue"
     ></mat-progress-bar>
   </div>
 </ng-container>
