@@ -5,8 +5,9 @@ import { SearchReportComponent } from './components/search-report/search-report.
 
 const routes: Routes = [
   { path: 'lung-report', component: LungReportComponent },
-  { path: '', component: SearchReportComponent },
-  { path: '**', component: LungReportComponent },
+  { path: 'search', component: SearchReportComponent },
+  { path: '', redirectTo: '/search', pathMatch: 'full' },
+  { path: '**', redirectTo: '/search', pathMatch: 'full' },
 ];
 
 @NgModule({
