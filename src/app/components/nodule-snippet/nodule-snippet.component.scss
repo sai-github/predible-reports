@@ -4,7 +4,10 @@
 
 .snippet-container {
   display: flex;
-  margin-left: 1rem;
+}
+
+.mat-card-header-text {
+  margin: 0;
 }
 
 .snippet-details {
@@ -13,7 +16,7 @@
 }
 
 .full-width {
-  width: 100%;
+  width: 90%;
 }
 
 .snippet-img {
@@ -21,15 +24,8 @@
   justify-content: flex-end;
   align-items: flex-start;
 
-  margin-left: 1rem;
   width: 100%;
 }
-
-// .img {
-//   height: 180px;
-//   width: 180px;
-//   background-color: beige;
-// }
 
 @media only screen and (max-width: 600px) {
   .img {
