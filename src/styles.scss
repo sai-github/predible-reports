@@ -21,7 +21,7 @@ body {
    that is currently Firefox-only */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #ef476f #00000000;
+  scrollbar-color: #cccccc #00000000;
 }
 
 /* Works on Chrome/Edge/Safari */
@@ -32,7 +32,7 @@ body {
   background: #00000000;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #ef476f;
+  background-color: #cccccc;
   border-radius: 5px;
   border: 3px solid #00000000;
 }
