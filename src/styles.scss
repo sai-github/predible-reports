@@ -36,3 +36,10 @@ body {
   border-radius: 5px;
   border: 3px solid #00000000;
 }
+
+/**
+* Material styles override
+*/
+.mat-snack-bar-container {
+  margin-bottom: 5rem !important;
+}
