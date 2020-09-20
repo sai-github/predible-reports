@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -14,8 +15,7 @@ export class UtilsService {
     typeList: string[];
     borderList: string[];
   }> {
-    const endPoint =
-      'https://my-json-server.typicode.com/sai-github/predible-reports-mock-data/analysisInfo';
+    const endPoint = environment.backend + 'analysisInfo';
     return this.http
       .get<any>(endPoint)
       .pipe(map((res) => res.nodule));

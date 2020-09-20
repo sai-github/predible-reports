@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { Report } from '../models/report.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -15,8 +16,7 @@ export class ReportsService {
   ) {}
 
   public getReport(id: string): Observable<Report> {
-    const endPoint =
-      'https://my-json-server.typicode.com/sai-github/predible-reports-mock-data/report/';
+    const endPoint = environment.backend + 'report/';
     return this.http.get<Report>(endPoint + id).pipe(
       map((res) => res),
       catchError((err) => {
